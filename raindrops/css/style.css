@@ -1,0 +1,31 @@
+div {
+    border: solid red 1px;
+}
+.wrapper {
+    display: flex;
+    margin: 0 auto;
+    width: 50%;
+    height: 520px;
+}
+.left_side {
+    flex: 2;
+}
+.right_side {
+    flex: 1;
+}
+.left_top {
+    display: flex;
+    height: 80%;
+}
+.right_top {
+    height: 20%;
+}
+.activ_ball {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+   /*  border-radius: 50%; */
+    visibility: hidden;
+}
+
