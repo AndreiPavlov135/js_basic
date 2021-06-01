@@ -4,7 +4,9 @@ const numbers = document.querySelectorAll('.number'),
     clearBtn = document.querySelector('.operator'),
     resultBtn = document.getElementById('result'),
     scoreBoard = document.querySelector('.score'),
-    deleteBtn = document.getElementById('delete');
+    deleteBtn = document.getElementById('delete'),
+    leftTop = document.querySelector('.left_top');
+let falseCounter = 0;
 let score = 0;
 let bonus = 9;
 let firstNumber;
@@ -34,7 +36,7 @@ function testNumber () {
     return ball.textContent = `${firstNumber} - ${secondNumber}`;
 }
 
-// Start the movement element 
+// Start and stop the movement element 
 function startBall () {
     testNumber(); 
     ball.style.visibility = 'visible';
@@ -42,7 +44,22 @@ function startBall () {
     timer = setInterval(function() {
         let timePassed = Date.now() - start;
         ball.style.top = timePassed / 20 + 'px';
-        if(ball.offsetTop >= 400) clearInterval(timer);
+        if (!falseCounter && ball.offsetTop >= 400) {
+            falseCounter++;
+            leftTop.style.height = '75%';
+            clearInterval(timer);
+            startBall();
+        } else if (falseCounter === 1 && ball.offsetTop >= 360) {
+            falseCounter++;
+            //console.log(ballFlag);
+            leftTop.style.height = '70%';
+            clearInterval(timer);
+            startBall();
+        } else if (falseCounter === 2 && ball.offsetTop >= 340) { //Test version
+            falseCounter++;
+            clearInterval(timer);
+            location.reload();
+        }
     }, 
     20)
 } 
