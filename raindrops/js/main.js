@@ -6,12 +6,12 @@ const numbers = document.querySelectorAll('.number'),
     scoreBoard = document.querySelector('.score'),
     deleteBtn = document.getElementById('delete'),
     leftTop = document.querySelector('.left_top');
-let falseCounter = 0;
-let score = 0;
-let bonus = 9;
-let firstNumber;
-let secondNumber;
-let timer;
+let falseCounter = 0,
+    score = 0,
+    bonus = 9,
+    firstNumber,
+    secondNumber,
+    timer;
    
 // Get button data
 const numPress = (num) => {
@@ -25,6 +25,11 @@ for(let i = 0; i < numbers.length; i++ ){
     });
 }
 
+window.addEventListener('keydown', event => {
+    if ((event.key).match(/[0-9]/)) numPress(event.key);
+    if ((event.key).match(/Backspace/)) display.value = '0';
+})
+
 clearBtn.addEventListener('click', e => location.reload());
 deleteBtn.addEventListener('click', e => display.value = '0');
 
@@ -32,12 +37,12 @@ deleteBtn.addEventListener('click', e => display.value = '0');
 function testNumber () {
     firstNumber = Math.ceil(Math.random()*10);
     secondNumber = Math.ceil(Math.random()*10);
-    if(secondNumber >= firstNumber) return testNumber ();
+    if (secondNumber >= firstNumber) return testNumber();
     return ball.textContent = `${firstNumber} - ${secondNumber}`;
 }
 
 // Start and stop the movement element 
-function startBall () {
+function startBall() {
     testNumber(); 
     ball.style.visibility = 'visible';
     let start = Date.now();
@@ -51,7 +56,6 @@ function startBall () {
             startBall();
         } else if (falseCounter === 1 && ball.offsetTop >= 360) {
             falseCounter++;
-            //console.log(ballFlag);
             leftTop.style.height = '70%';
             clearInterval(timer);
             startBall();
@@ -67,7 +71,7 @@ function startBall () {
 start.addEventListener('click', startBall);
 
 // Check the answer and get score counter 
-function operation (){
+function operation() {
     let result = firstNumber - secondNumber;
     if(+display.value === result){
         display.value = '0';
@@ -87,6 +91,14 @@ function operation (){
     }
 }
 
+// Start operation function on click and keydown
 resultBtn.addEventListener('click', operation);
+
+document.addEventListener('keydown', event => {
+    if ((event.code).match(/Enter/)) {
+        event.preventDefault();
+        operation();
+    }
+})
 
 
