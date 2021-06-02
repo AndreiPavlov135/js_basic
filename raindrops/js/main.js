@@ -68,7 +68,9 @@ function startBall() {
     20)
 } 
 
+// Start game
 start.addEventListener('click', startBall);
+start.addEventListener('click', () => document.querySelector('.firstPlace').style.display = 'none')
 
 // Check the answer and get score counter 
 function operation() {
