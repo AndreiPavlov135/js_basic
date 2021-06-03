@@ -27,7 +27,7 @@ for(let i = 0; i < numbers.length; i++ ){
 
 window.addEventListener('keydown', event => {
     if ((event.key).match(/[0-9]/)) numPress(event.key);
-    if ((event.key).match(/Backspace/)) display.value = '0';
+    if ((event.key).match(/Delete/)) display.value = '0';
 })
 
 clearBtn.addEventListener('click', e => location.reload());
@@ -43,8 +43,7 @@ function testNumber () {
 
 // Start and stop the movement element 
 function startBall() {
-    testNumber(); 
-    ball.style.visibility = 'visible';
+    testNumber();
     let start = Date.now();
     timer = setInterval(function() {
         let timePassed = Date.now() - start;
@@ -84,9 +83,8 @@ function operation() {
         startBall();
     } else {
         display.value = ' ';
-        scoreBoard.textContent -= bonus +1;
-       // console.log(`${bonus + 1}`);
-        if(scoreBoard.textContent <= 0) {
+        scoreBoard.textContent -= bonus + 1;
+        if (scoreBoard.textContent <= 0) {
             scoreBoard.textContent = 0;
             score = 0;
         } else score = +scoreBoard.textContent;

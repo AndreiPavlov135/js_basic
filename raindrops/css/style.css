@@ -1,6 +1,3 @@
-/* div {
-    border: solid 1px red; 
-}*/
 .firstPlace h1{
     margin: 0;
     color: hsl(195, 100%, 50%);
@@ -72,28 +69,95 @@
     flex-direction: column;
     flex: 2;
 }
-.right_side {
-    flex: 1;
-}
 .left_top {
+    background: linear-gradient(170deg, #87CEFA, #ffff);
     display: flex;
     height: 80%;
 }
 .left_bottom {
     flex-grow: inherit;
-    background: #67ffff;
+    background: #8bc1c7;
+}
+.right_side {
+    flex: 1;
+    background: #b3e5d5;
 }
 .right_top {
-    height: 20%;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 3px #f7f7f7;
+    border-radius: 0 0 45px 45px;
+    margin-bottom: 70px;
+}
+.right_top h1{
+    margin: 0;
+    font-size: x-large;
+    font-weight: normal;
+}
+.right_top h1 .score{
+    color: #b3163d;
+    font-weight: bold;
+}
+.right_top img{
+    width: 20px;
+    margin-right: 5px;
+}
+.calc {
+    border-radius: 6px;
+    background-color: #dedede;
+    margin: auto;
+    border: 6px solid #f1e6c9;
+    box-sizing: border-box;
+    box-shadow: 0 9px 4px -4px rgb(0 0 0 / 20%);
+    width: 160px;
+}
+.calc-display-input{
+    height: 70px;
+    background-color: #e3e6c9;
+    text-align: center;
+    font-size: 35px;
+    width: 100%;
+    font-weight: bold;
+    box-sizing: border-box;
+    color: black;
+}
+.calc-table{
+    border-collapse: collapse;
+}
+.btn{
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    font-size: x-large;
+    font-weight: 600;
+}
+.btn-long{
+    width: 100%;
+    text-align: start;
+}
+.btn-clear, .btn-equal{
+    height: 74px;
+}
+.btn-clear, .btn-equal, #delete{
+    font-weight: 700;
+    font-size: x-small;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .activ_ball {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     margin: 0 auto;
+    border: 3px solid #64c1c7;
     border-radius: 50%;
-    visibility: hidden;
-    background: #67ffff;
+    background: #7ed3ed;
 }
 
 button:focus {
@@ -121,8 +185,5 @@ button:focus {
 @media only screen and (min-width: 320px) and (max-width: 449px) {
     .wrapper {
         width: 95%;
-    }
-    .calc-display-input {
-        width: 90%;
     }
 }

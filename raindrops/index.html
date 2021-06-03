@@ -28,18 +28,17 @@
             <div class="activ_ball firs_ball"></div>
             <!-- <div class="activ_ball second_ball"></div> -->
         </div>
-        <div class="left_bottom">
-            <!-- <div class="height"></div> -->
-        </div>
+        <div class="left_bottom"></div>
     </div>
     <div class="right_side">
         <div class="right_top">
+            <img src="css/img/Fav.png" alt="star">
             <h1>Score: <span class="score">0</span></h1>
         </div>
         <div class="right_bottom">
             <div class="calc">
                 <div class="calc-display">
-                    <input disabled type="text" id="display" value= "0" name="" placeholder="000000000000000000" class="calc-display-input">
+                    <input disabled type="text" id="display" value="0" name="" class="calc-display-input">
                 </div>
                 <div class="calc-buttons">
                     <table class="calc-table">
@@ -53,7 +52,9 @@
                             <td>
                                 <button type="button" class="number btn-hover-green btn">9</button>
                             </td>
-
+                            <td rowspan="2">
+                                <button type="button" class="operator btn btn-hover-orange btn-clear">Clear</button>
+                            </td>
                         </tr>
                         <tr class="calc-buttons-row">
                             <td>
@@ -64,9 +65,6 @@
                             </td>
                             <td>
                                 <button type="button" class="number btn-hover-green btn">6</button>
-                            </td>
-                            <td>
-                                <button type="button" class="operator btn btn-hover-orange">Clear</button>
                             </td>
                         </tr>
                         <tr class="calc-buttons-row">
@@ -79,12 +77,12 @@
                             <td>
                                 <button type="button" class="number btn-hover-green btn">3</button>
                             </td>
-                            <td>
+                            <td rowspan="2">
                                 <button type="button" class="operator btn btn-equal btn-hover-orange" id="result">Enter</button>
                             </td>
                         </tr>
                         <tr class="calc-buttons-row">
-                            <td colspan="3">
+                            <td colspan="2">
                                 <button type="button" class="number btn-hover-green btn btn-long">0</button>
                             </td>
                             <td>
