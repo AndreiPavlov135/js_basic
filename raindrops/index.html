@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raindrops</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.6.4/math.js"></script>
+</head>
+<body>
+   <div class="wrapper">
+    <div class="first-place">
+        <div>
+            <h1 class="logo">Raindrops</h1>
+        </div>
+        <img class="img" src="css/img/drop-157108_640.png" alt="drop" width="35%">
+        <div>
+            <button class="how_to_play btn-first">How to play</button>
+            <button class="start btn-first">Play</button>
+        </div>
+    </div>
+    <div class="left_side">
+        <div class="left_top" id='enterDiv'>
+            <div class="activ_ball firs_ball"></div>
+            <!-- <div class="activ_ball second_ball"></div> -->
+        </div>
+        <div class="left_bottom"></div>
+    </div>
+    <div class="right_side">
+        <div class="right_top">
+            <img src="css/img/Fav.png" alt="star">
+            <h1>Score: <span class="score">0</span></h1>
+        </div>
+        <div class="right_bottom">
+            <div class="calc">
+                <div class="calc-display">
+                    <input disabled type="text" id="display" value="0" name="" class="calc-display-input">
+                </div>
+                <div class="calc-buttons">
+                    <table class="calc-table">
+                        <tr class="calc-buttons-row">
+                            <td>
+                                <button type="button" class="number btn-hover-green btn">7</button>
+                            </td>
+                            <td>
+                                <button type="button" class="number btn-hover-green btn">8</button>
+                            </td>
+                            <td>
+                                <button type="button" class="number btn-hover-green btn">9</button>
+                            </td>
+                            <td rowspan="2">
+                                <button type="button" class="operator btn btn-hover-orange btn-clear">Clear</button>
+                            </td>
+                        </tr>
+                        <tr class="calc-buttons-row">
+                            <td>
+                                <button type="button" class="number btn-hover-green btn">4</button>
+                            </td>
+                            <td>
+                                <button type="button" class="number btn-hover-green btn">5</button>
+                            </td>
+                            <td>
+                                <button type="button" class="number btn-hover-green btn">6</button>
+                            </td>
+                        </tr>
+                        <tr class="calc-buttons-row">
+                            <td>
+                                <button type="button" class="number btn-hover-green btn">1</button>
+                            </td>
+                            <td>
+                                <button type="button" class="number btn-hover-green btn">2</button>
+                            </td>
+                            <td>
+                                <button type="button" class="number btn-hover-green btn">3</button>
+                            </td>
+                            <td rowspan="2">
+                                <button type="button" class="operator btn btn-equal btn-hover-orange" id="result">Enter</button>
+                            </td>
+                        </tr>
+                        <tr class="calc-buttons-row">
+                            <td colspan="2">
+                                <button type="button" class="number btn-hover-green btn btn-long">0</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn  btn-hover-orange" id="delete">Delete</button>
+                            </td>                
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="last_place">
+        <div class="last_place_wrapper">
+            <div>
+                <h1 class="logo">Raindrops</h1>
+            </div>
+            <div class="total_content">
+                <div class="total">
+                    <span class="ok_total">Ok, youre total:</span><br>
+                    <span class="total_score points"></span>
+                    <span class="points">points</span>
+                </div>
+            </div>
+            <div>
+                <button class="btn-continue"><span class="continue">Continue</span><span
+                        class="continue_icon">>></span></button>
+            </div>
+        </div>
+    </div>
+   </div> 
+        <script src="js/main.js"></script>
+        <script src="js/test.js"></script>
+</body>
+</html>
