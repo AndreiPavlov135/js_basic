@@ -1,11 +1,14 @@
 const numbers = document.querySelectorAll('.number'),
     start = document.querySelector('.start'),
+    howToPlay = document.querySelector('.how_to_play'),
     ball = document.querySelector('.activ_ball'),
     clearBtn = document.querySelector('.operator'),
     resultBtn = document.getElementById('result'),
     scoreBoard = document.querySelector('.score'),
     deleteBtn = document.getElementById('delete'),
-    leftTop = document.querySelector('.left_top');
+    display = document.getElementById('display'),
+    leftTop = document.querySelector('.left_top'),
+    continueBtn = document.querySelector('.btn-continue');
 let falseCounter = 0,
     score = 0,
     bonus = 9,
@@ -30,12 +33,21 @@ window.addEventListener('keydown', event => {
     if ((event.key).match(/Delete/)) display.value = '0';
 })
 
-clearBtn.addEventListener('click', e => location.reload());
 deleteBtn.addEventListener('click', e => display.value = '0');
+
+function backspaceBtn() {
+    display.value = display.value.substring(0, display.value.length - 1);
+    if (display.value === '') display.value = '0';
+}
+
+document.addEventListener('keydown', event => {
+    if ((event.code).match(/Backspace/)) backspaceBtn();
+})
+clearBtn.addEventListener('click', backspaceBtn)
 
 // Get random numbers
 function testNumber () {
-    firstNumber = Math.ceil(Math.random()*10);
+    firstNumber = Math.ceil(Math.random() * 100);
     secondNumber = Math.ceil(Math.random()*10);
     if (secondNumber >= firstNumber) return testNumber();
     return ball.textContent = `${firstNumber} - ${secondNumber}`;
@@ -58,10 +70,11 @@ function startBall() {
             leftTop.style.height = '70%';
             clearInterval(timer);
             startBall();
-        } else if (falseCounter === 2 && ball.offsetTop >= 340) { //Test version
+        } else if (falseCounter === 2 && ball.offsetTop >= 340) {
             falseCounter++;
             clearInterval(timer);
-            location.reload();
+            document.querySelector('.total_score').textContent = score;
+            document.querySelector('.last_place').style.visibility = 'visible';
         }
     }, 
     20)
@@ -69,7 +82,10 @@ function startBall() {
 
 // Start game
 start.addEventListener('click', startBall);
-start.addEventListener('click', () => document.querySelector('.firstPlace').style.display = 'none')
+start.addEventListener('click', () => document.querySelector('.first-place').style.display = 'none')
+continueBtn.addEventListener('click', () => location.reload());
+// No ideas yet
+howToPlay.addEventListener('click', () => alert('Как-нибудь!'));
 
 // Check the answer and get score counter 
 function operation() {

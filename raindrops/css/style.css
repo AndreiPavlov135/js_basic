@@ -1,10 +1,11 @@
-.firstPlace h1{
+/* ......................FIRST..PLACE...................... */
+.logo{
     margin: 0;
     color: hsl(195, 100%, 50%);
     font-family: 'Baumans', sans-serif;
     font-size: 65px;
 }
-.firstPlace {
+.first-place {
     width: inherit;
     height: inherit;
     position: absolute;
@@ -14,7 +15,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-   /*  display: none;  */
+    /* display: none;  */
 }
 .btn-first{
     appearance: none;
@@ -57,6 +58,7 @@
     background-position: 7% center; 
     background-image: url(img/Fav.png);
 }
+/* .......................MAIN..CONTENT.......................... */
 .wrapper {
     font-family: 'helvetica neue', sans-serif;
     display: flex;
@@ -159,11 +161,70 @@
     border-radius: 50%;
     background: #7ed3ed;
 }
-
 button:focus {
     outline: none !important
 }
-
+/* .........................LAST..PLACE........................... */
+.last_place{
+    visibility: hidden;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    z-index: 99;
+    background: linear-gradient(0deg, #ffff, #87CEFA, #ffff);
+    display: flex;
+    justify-content: center;
+}
+.last_place_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.total_content{
+    width: 230px;
+    height: 185px;
+    background-color: #e6efef;
+}
+.btn-continue{
+    border: 0;
+    border-radius: 5px;
+    background: linear-gradient(0deg, #008000, #0ad621,#008000);
+    color: #fff;
+    padding: 6px 16px;
+    cursor: pointer; 
+    display: flex;
+    align-items: center;
+}
+.btn-continue:hover{
+    background: linear-gradient(0deg,#008000, #0ad621);
+}
+.continue{
+    font-weight: 600;
+    font-size: 16px;
+}
+.continue_icon{
+    padding-left: 15px;
+    font-weight: 900;
+    font-size: x-large;
+}
+.total_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ok_total{
+    font-style: italic;
+    font-size: x-large;
+    font-weight: bold;
+}
+.points{
+   font-family: 'Baumans', sans-serif;
+   color: #b3163d;
+   font-weight: bold;
+   font-size: x-large;
+}
+/* .........................MEDIA..FILES.......................... */
 @media only screen and (min-width: 780px) and (max-width: 900px) {
     .wrapper {
         width: 60%;
