@@ -1,5 +1,6 @@
 const numbers = document.querySelectorAll('.number'),
     start = document.querySelector('.start'),
+    sound = document.querySelector('.sound'),
     howToPlay = document.querySelector('.how_to_play'),
     ball = document.querySelector('.activ_ball'),
     clearBtn = document.querySelector('.operator'),
@@ -55,6 +56,7 @@ function testNumber () {
 
 // Start and stop the movement element 
 function startBall() {
+    sound.play();
     testNumber();
     let start = Date.now();
     timer = setInterval(function() {
@@ -73,6 +75,7 @@ function startBall() {
         } else if (falseCounter === 2 && ball.offsetTop >= 340) {
             falseCounter++;
             clearInterval(timer);
+            sound.pause();
             document.querySelector('.total_score').textContent = score;
             document.querySelector('.last_place').style.visibility = 'visible';
         }
