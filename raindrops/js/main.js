@@ -29,22 +29,10 @@ for(let i = 0; i < numbers.length; i++ ){
     });
 }
 
-window.addEventListener('keydown', event => {
-    if ((event.key).match(/[0-9]/)) numPress(event.key);
-    if ((event.key).match(/Delete/)) display.value = '0';
-})
-
-deleteBtn.addEventListener('click', e => display.value = '0');
-
 function backspaceBtn() {
     display.value = display.value.substring(0, display.value.length - 1);
     if (display.value === '') display.value = '0';
 }
-
-document.addEventListener('keydown', event => {
-    if ((event.code).match(/Backspace/)) backspaceBtn();
-})
-clearBtn.addEventListener('click', backspaceBtn)
 
 // Get random numbers
 function testNumber () {
@@ -83,13 +71,6 @@ function startBall() {
     20)
 } 
 
-// Start game
-start.addEventListener('click', startBall);
-start.addEventListener('click', () => document.querySelector('.first-place').style.display = 'none')
-continueBtn.addEventListener('click', () => location.reload());
-// No ideas yet
-howToPlay.addEventListener('click', () => alert('Как-нибудь!'));
-
 // Check the answer and get score counter 
 function operation() {
     let result = firstNumber - secondNumber;
@@ -110,9 +91,6 @@ function operation() {
     }
 }
 
-// Start operation function on click and keydown
-resultBtn.addEventListener('click', operation);
-
 document.addEventListener('keydown', event => {
     if ((event.code).match(/Enter/)) {
         event.preventDefault();
@@ -120,4 +98,22 @@ document.addEventListener('keydown', event => {
     }
 })
 
-
+document.addEventListener('DOMContentLoaded', () => {
+    // Start game
+    start.addEventListener('click', startBall);
+    start.addEventListener('click', () => document.querySelector('.first-place').style.display = 'none')
+    continueBtn.addEventListener('click', () => location.reload());
+    // No ideas yet
+    howToPlay.addEventListener('click', () => alert('Как-нибудь!'));
+    // Start operation function on click and keydown
+    resultBtn.addEventListener('click', operation);
+    window.addEventListener('keydown', event => {
+        if ((event.key).match(/[0-9]/)) numPress(event.key);
+        if ((event.key).match(/Delete/)) display.value = '0';
+    })
+    document.addEventListener('keydown', event => {
+        if ((event.code).match(/Backspace/)) backspaceBtn();
+    })
+    clearBtn.addEventListener('click', backspaceBtn);
+    deleteBtn.addEventListener('click', e => display.value = '0');
+});
