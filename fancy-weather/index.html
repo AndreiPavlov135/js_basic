@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fancy-weather</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="buttons_panel">
+                <button id="refresh" class="button btn_refresh"></button>
+                <button id="en" class="button btn_en">EN</button>
+                <button id="ru" class="button btn_ru">RU</button>
+                <button id="pl" class="button btn_pl">PL</button>
+                <button id="F" class="button btn_f">°F</button>
+                <button id="C" class="button btn_c">°C</button>
+            </div>
+            <form class="search_panel">
+                <input type="text" id="searchInput" class="search_input">
+                <button type="submit" id="btnSearch" class="button btn_search"></button>
+            </form>
+        </header>
+        <main>
+            <div class="weather">
+                <div class="weather_card">
+                    <div class="weather_card_big">
+                        <div class="weather_location">
+                            <span class="weather_town" id="town">Minsk</span>
+                            <span class="weather_country" id="country">Belarus</span>
+                        </div>
+                        <div class="weather_day"></div>
+                        <div class="weather_time">
+                            <div class="weather_time_date" id="date"></div>
+                            <div class="weather_time_hours&minutes">
+                                <span id="time"></span>
+                            </div>
+                        </div>
+                        <div class="weather_about">
+                            <div class="weather_about_big">
+                                <span class="temperature"></span>
+                                <span class="c">&deg;c</span>
+                                <span class="f">&deg;f</span>
+                                <img src="" alt="weather" id="icon" class="weather_icon">
+                            </div>
+                            <div>
+                                <span class="condition"></span>
+                            </div>
+                        </div>
+                        <div class="weather_parameters"></div>
+                    </div>
+                    <div class="weather_next-days">
+                        <div class="weather_about_small">
+                                <img src="" alt="weather" id="iconFirst" class="small_icon">
+                                <div class="weather_day_first"></div>
+                                <div>
+                                    <span class="date_first"></span>
+                                </div>
+                                <div>
+                                    <span class="temperature_first"></span>
+                                    <span class="c">&deg;c</span>
+                                    <span class="f">&deg;f</span>
+                                </div>              
+                                <div>
+                                    <span class="condition_first"></span>
+                                </div>
+                        </div>
+                        <div class="weather_about_small"> 
+                            <img src="" alt="weather" id="iconSecond" class="small_icon">
+                            <div class="weather_day_second"></div>
+                            <div>
+                                <span class="date_second"></span>
+                            </div>
+                            <div>
+                                <span class="temperature_second"></span>                               
+                                <span class="c">&deg;c</span>
+                                <span class="f">&deg;f</span>
+                            </div>                          
+                            <div>
+                                <span class="condition_second"></span>
+                            </div>    
+                        </div>
+                        <div class="weather_about_small">
+                            <img src="" alt="weather" id="iconThird" class="small_icon">
+                            <div class="weather_day_third"></div>
+                            <div>
+                                <span class="date_third"></span>
+                            </div>
+                            <div>
+                                <span class="temperature_third"></span>
+                                <span class="c">&deg;c</span>
+                                <span class="f">&deg;f</span>
+                            </div>                            
+                            <div>
+                                <span class="condition_third"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="map_block">
+                    <div class="map_wrapper">
+                        <div class="map" id="map"></div>
+                    </div>
+                    <div class="lat_wrapper">
+                        <div class="lat_rus">
+                            <p class="latitude">Широта: <span class="latitude_set"></span></p>
+                            <p class="longitude">Долгота: <span class="longitude_set"></span></p>
+                        </div>
+                        <div class="lat_eng">
+                            <p class="latitude">Latitude: <span class="latitude_set"></span></p>
+                            <p class="longitude">Longitude: <span class="longitude_set"></span></p>
+                        </div>
+                        <div class="lat_pl">
+                            <p class="latitude">Szerokość: <span class="latitude_set"></span></p>
+                            <p class="longitude">Długość: <span class="longitude_set"></span></p>
+                        </div>
+                    </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="script/mapscript.js"></script>
+<script src="script/main.js"></script>
+</html>
