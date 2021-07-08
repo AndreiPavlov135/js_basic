@@ -170,7 +170,7 @@ const getTown = (e) =>{
 
 setInterval(()=>{
     let timeZoneArea = new Date().toLocaleString('en-Us',{timeZone: region, hour12: false});
-    time.textContent = `${timeZoneArea.substring(11, timeZoneArea.length)}`;
+    time.textContent = `${timeZoneArea.substring(10, timeZoneArea.length)}`;
 }, 1000)
 
 document.addEventListener('DOMContentLoaded', () => {
