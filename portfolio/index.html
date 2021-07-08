@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/portfolio-icon.png">
+    <title>Portfolio</title>
+</head>
+<body>
+    <section class="card_wrapper">
+        <div class="photo_container">
+            <img class="photo" src="img/photo1.png" alt="photo">
+        </div>
+        <div class="avatar_container">
+            <h1>Андрей Павлов</h1>
+            <h2>Junior front-end developer</h2>
+            <p class="phone_number">+37529-5080289</p>
+        </div>
+        <div class="contacts">
+            <ul>
+                <li>
+                    <a href="https://github.com/AndreiPavlov135">
+                        <img src="https://github.com/fluidicon.png" class="github" alt="icon_git">
+                    </a>
+                </li>
+                <li>
+                    <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" class="gmail" alt="icon_gmail">
+                </li>
+            </ul>
+        </div>  
+    </section>
+    <section class="portfolio">
+        <div class="portfolio_container">
+            <h3>Мои проекты: &#11015;</h3>
+            <article class="project raindrops">
+                <div class="project_image">
+                    <a href="https://github.com/AndreiPavlov135/js_basic/tree/raindrops" title="открыть код">
+                    <img src="img/raindrops1.PNG" alt="raindrops">
+                    </a>
+                </div>
+                <div class="project_content">
+                    <h4>Игра Raindrops</h4>
+                    <p>Приложение - тренажёр по математике, позволяющий закрепить навыки арифметических действий. В левой части игрового поля, оформленного как морской пейзаж, падают капли дождя. Внутри каждой капли - математическое выражение. Если игрок правильно решил математическое выражение и успел ввести ответ до того, как капля упала в море, его счёт увеличивается. Использованы HTML5, CSS3, JavaScript. В процессе игры присутсвует анимация и звук.</p>
+                </div>
+            </article>
+            <article class="project fancy_weather">
+                <div class="project_image">
+                    <a href="https://github.com/AndreiPavlov135/js_basic/tree/fancy_weather" title="открыть код">
+                        <img src="img/fancy-weather.PNG" alt="weather">
+                    </a>
+                </div>
+                <div class="project_content">
+                    <h4>Прогноз погоды fancy-weather</h4>
+                    <p>Когда пользователь открывает приложение, все данные на странице относятся к текущему местоположению пользователя.
+                        В строке поиска осуществляется поиск по населённому пункту.
+                        Фоновое изображение изменяется при обновлении содержания страницы или при клике по кнопке для переключения фонового изображения в блоке контроля. Использованы HTML5, CSS3, JavaScript. Встроена карта Google, данные с сервера приходят при помощи асинхронных запросов.</p>
+                </div>
+            </article>
+            <article class="project singolo">
+                <div class="project_image">
+                    <a href="https://github.com/AndreiPavlov135/singolo" title="открыть код">
+                        <img src="img/singolo.PNG" alt="singolo">
+                    </a>
+                </div>
+                <div class="project_content">
+                    <h4>Верстка simple-singolo</h4>
+                    <p>В ходе обучения на курсе <b>up-skill-lab</b> выполнено задание simple-singolo. Необходимо было  сверстать страницу согласно макету. Использовать JavaScript для создания адаптивного меню, слайдера, переключения табов. Макет сверстан для 4х размеров экрана, применялся Flexbox, медиа-запросы.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+<script src="base.js"></script>
+<script src="index.js"></script>
+</html>
